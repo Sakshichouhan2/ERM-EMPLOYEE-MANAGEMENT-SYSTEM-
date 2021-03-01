@@ -10,11 +10,13 @@ class Notification(models.Model):
 
 
 class Leave(models.Model):
+    id = models.AutoField(primary_key=True)
     employee_name =  models.CharField(max_length=50, null=True, blank=True)
     leave_application = models.CharField(max_length=200, null=True, blank=True)
 
 
-class Attedence(models.Model):
+class Attendence(models.Model):
+    id = models.AutoField(primary_key=True)
     attendence = models.DateTimeField()
 
 
@@ -24,3 +26,4 @@ class Salary(models.Model):
 
 class EOD(models.Model):
     eod = models.CharField(max_length=500)
+    

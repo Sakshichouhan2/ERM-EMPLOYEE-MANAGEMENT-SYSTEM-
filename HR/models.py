@@ -22,13 +22,25 @@ Hr Functionality-
 9.Salary Details(Pay slip-- if anyone want)
 '''
 
-class Employee_Registration(models.Model):
-    fname = models.CharField(max_length=50, null=True, blank=True)
-    lname = models.CharField(max_length=50, null=True, blank=True)
+class Add_Employee(models.Model):
+    id = models.AutoField(primary_key=True)
+    email = models.EmailField(max_length=70, blank=True)
+    password = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    username = models.CharField(max_length=50, null=True, blank=True) 
+    Address = models.CharField(max_length=200, null=True, blank=True)
+
+'''
+    class Employee_Registration(models.Model):
+    id = models.AutoField(primary_key=True)
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(max_length=70,blank=True)
     password = models.CharField(max_length=50)
     confirm_password = models.CharField(max_length=50)
-
+    
+'''
 
 
 class Meeting(models.Model):
@@ -37,6 +49,7 @@ class Meeting(models.Model):
 
 
 class Attedence(models.Model):
+    id = models.AutoField(primary_key=True)
     attendence = models.DateTimeField()
 
 
@@ -68,9 +81,13 @@ class Salary_Details(models.Model):
  
 
 class Leave(models.Model):
-    employee_name =  models.CharField(max_length=50, null=True, blank=True)
-    leave_application = models.CharField(max_length=200, null=True, blank=True)
-
+    id = models.AutoField(primary_key=True)
+    Employee_id =  models.IntegerField()
+    Employee_Name = models.CharField(max_length=100, null=True, blank=True)
+    Leave_Date = models.DateTimeField()
+    Leave_Message = models.CharField(max_length=200, null=True, blank=True)
+    Apply_On = models.DateTimeField()
+    Action = models.CharField(max_length=100, null=True, blank=True)
 
 
 
